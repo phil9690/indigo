@@ -22,7 +22,9 @@ $nav-li-active-bg: $orange;
 $nav-li-active-link-color: #fff;
 $banner-h2-text-color: #fff;
 
-body {
+$dark-grey: #313131;
+$blue-grey: #374967;
+body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
@@ -116,5 +118,19 @@ nav {
     border-radius: 50%;
     margin: 0 auto;
     margin-bottom: 1rem;
+  }
+}
+
+.under-construction {
+  padding: 2rem 0;
+  width: 50%;
+  margin: 0 auto;
+  h4 {
+    font-size: 3rem;
+    color: $dark-grey;
+  }
+  p {
+    font-size: 1.4rem;
+    color: $blue-grey;
   }
 }
