@@ -14,6 +14,7 @@
  *= require_self
  */
 
+$white: #fff;
 $orange: #ecb332;
 
 $nav-text-grey: #343535;
@@ -43,7 +44,7 @@ nav {
   }
   a.active {
     background: $nav-li-active-bg;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 1rem;
     border-radius: 10px;
     color: $nav-li-active-link-color;
   }
@@ -67,18 +68,28 @@ nav {
 .banner {
   position: relative;
   width: 100%;
-  height: auto;
-  img {
+  height: 500px;
+  overflow: hidden;
+  .slogan {
+    width: 100%;
+    padding: 5rem 0 3rem 0;
+  }
+  .banner-img {
     z-index: 1;
+    background-image: image-url("indigo-home-image.jpg");
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
   }
   h2 {
-    position: absolute;
-    z-index: 2;
-    top: 15%;
     width: 100%;
     text-align: center;
     color: $banner-h2-text-color;
     font-size: 3rem;
+    line-height: 3.2rem;
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
     span {
@@ -86,5 +97,24 @@ nav {
       font-weight: 700;
       color: $orange;
     }
+  }
+  .features {
+    text-align: center;
+    color: $white;
+    h4 {
+      font-size: 1.2rem;
+      span {
+        font-weight: 600;
+        display: block;
+      }
+    }
+  }
+  .icon-placeholder {
+    height: 80px;
+    width: 80px;
+    background: $white;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
   }
 }
