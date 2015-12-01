@@ -13,7 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require vendor/jquery.min.js
+//= require vendor/what-input.min.js
 //= require foundation
-//= require jquery.min.js
-//= require what-input.min.js
 //= require_tree .
+
+$(document).on('ready page:load', function () {
+  $(document).foundation();
+});

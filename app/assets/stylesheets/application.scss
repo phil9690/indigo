@@ -16,14 +16,16 @@
 
 $white: #fff;
 $orange: #ecb332;
+$yellow: #ebae28;
 
 $nav-text-grey: #343535;
 $nav-li-active-bg: $orange;
-$nav-li-active-link-color: #fff;
-$banner-h2-text-color: #fff;
+$nav-li-active-link-color: $white;
+$banner-h2-text-color: $white;
 
 $dark-grey: #313131;
 $blue-grey: #374967;
+
 body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
@@ -132,5 +134,62 @@ nav {
   p {
     font-size: 1.4rem;
     color: $blue-grey;
+  }
+}
+
+.contact-section {
+  background: $blue-grey;
+  padding: 2rem 1rem;
+  color: $white;
+  text-align: center;
+  h4 {
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+  }
+  .tabs {
+    background: none;
+    border: none;
+    display: inline-block;
+  }
+  .tabs-title {
+    text-transform: uppercase;
+    a {
+      border: 2px solid $white;
+      background: $white;
+      font-size: 1.3rem;
+      color: $blue-grey;
+    }
+    &:first-child a {
+        border-radius: 10px 0 0 10px;
+    }
+    &:last-child a {
+        border-radius: 0 10px 10px 0;
+    }
+  }
+  .is-active a {
+    background: none;
+    color: $white;
+  }
+  .tabs-content {
+    background: none;
+    border: none;
+  }
+  input {
+    border-radius: 10px;
+  }
+  label {
+    text-align: left;
+    color: $white;
+    font-size: 1rem;
+  }
+  .button {
+    background: $yellow !important;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;
+  }
+  a {
+    text-decoration: underline;
   }
 }
