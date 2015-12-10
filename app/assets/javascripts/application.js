@@ -14,7 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require vendor/jquery.min.js
-//= require vendor/what-input.min.js
+//= require rails.validations
+//= require rails.validations.simple_form
 //= require foundation
 //= require_tree .
 
