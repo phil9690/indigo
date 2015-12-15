@@ -3,18 +3,15 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 #
 #
-$(document).on 'ready page:load', ->
-  ContactForm.init()
-
 class this.ContactForm
-  @init: ->
-    form = new ContactForm()
+  @init: (form, submitBtn) ->
+    form = new ContactForm(form, submitBtn)
     form.setupEvents()
 
   # NewContactModal constructor
-  constructor: ->
-    @form = $('#new_hiring_message')
-    @submitBtn = $('#hiring_button')
+  constructor: (form, submitBtn) ->
+    @form = form
+    @submitBtn = submitBtn
     @formOpts =
       beforeSubmit:   @_handleFormSubmission
       success:        @_handleFormResponse
@@ -24,24 +21,22 @@ class this.ContactForm
   setupEvents: =>
     @form.ajaxForm(@formOpts)
 
+  _handleFormSubmission: =>
+    formValidators = ClientSideValidations.forms[@form.attr('id')].validators
     @form.enableClientSideValidations()
 
-  _handleFormSubmission: =>
-     formValidators = ClientSideValidations.forms[@form.attr('id')].validators
-     debugger
+    return false unless @form.isValid(formValidators)
 
-     return false unless @form.isValid(formValidators)
-
-     @submitBtn.prop('disabled', true)
-     @submitBtn.addClass('disabled')
-     @submitBtn.val('Sending..')
+    @submitBtn.prop('disabled', true)
+    @submitBtn.addClass('disabled')
+    @submitBtn.val('Sending..')
 
   _handleFormResponse: (responseText, statusText, xhr, $form) =>
-     @submitBtn.val('Sent!')
+    @submitBtn.val('Sent!')
 
   _handleFormError: =>
     # TODO: Change this to a toast or some kind
-    console.log 'error took place.'
+    console.log 'An error took place.'
     @resetForm()
 
   resetForm: ->
