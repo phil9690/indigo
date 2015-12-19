@@ -1,61 +1,42 @@
-<!-- <form> -->
-<!--   <div class="row"> -->
-<!--     <div class="medium&#45;2 columns"> -->
-<!--       <label>Title: -->
-<!--         <input type="text" placeholder="Mr/Mrs/Miss"> -->
-<!--       </label> -->
-<!--     </div> -->
-<!--     <div class="medium&#45;5 columns"> -->
-<!--       <label>First Name: -->
-<!--         <input type="text" placeholder="John"> -->
-<!--       </label> -->
-<!--     </div> -->
-<!--     <div class="medium&#45;5 columns"> -->
-<!--       <label>Second Name: -->
-<!--         <input type="text" placeholder="Smith"> -->
-<!--       </label> -->
-<!--     </div> -->
-<!--     <div class="medium&#45;12 columns"> -->
-<!--       <label>Address: -->
-<!--         <input type="text" placeholder="First Line"> -->
-<!--         <input type="text" placeholder="Second Line"> -->
-<!--       </label> -->
-<!--     </div> -->
-<!--     <div class="medium&#45;4 columns"> -->
-<!--       <input type="text" placeholder="Town/City"> -->
-<!--     </div> -->
-<!--     <div class="medium&#45;4 columns"> -->
-<!--       <input type="text" placeholder="County"> -->
-<!--     </div> -->
-<!--     <div class="medium&#45;4 columns"> -->
-<!--       <input type="text" placeholder="Post Code"> -->
-<!--     </div> -->
-<!--     <div class="medium&#45;5 columns"> -->
-<!--       <label>Contact Number: -->
-<!--         <input type="number" placeholder="01234 567890"> -->
-<!--       </label> -->
-<!--     </div> -->
-<!--     <div class="medium&#45;7 columns"> -->
-<!--       <label>Contact Email: -->
-<!--         <input type="text" placeholder="john.smith@sample.com"> -->
-<!--       </label> -->
-<!--     </div> -->
-<!--     <div class="medium&#45;6 columns"> -->
-<!--       <label>Current/Most Recent Occupation: -->
-<!--         <input type="text" placeholder="Labourer"> -->
-<!--       </label> -->
-<!--     </div> -->
-<!--     <div class="medium&#45;6 columns"> -->
-<!--       <label>Construction Qualifications: -->
-<!--         <input type="text" placeholder="Qualification 1"> -->
-<!--         <input type="text" placeholder="Qualification 2"> -->
-<!--         <input type="text" placeholder="Qualification 3"> -->
-<!--       </label> -->
-<!--     </div> -->
-<!--   </div> -->
-<!--   <div class="small&#45;12 columns text&#45;left"> -->
-<!--     <a href="#!" class="button">Sign Up</a> -->
-<!--     <a href="#!">or send an email to us</a> -->
-<!--   </div> -->
-<!-- </form> -->
-<!--  -->
+<%= simple_form_for @looking_message, validate: true do |f| %>
+  <div class="row">
+    <div class="medium-2 columns">
+      <%= f.input :title, placeholder: 'Mr/Mrs/Miss' %>
+    </div>
+    <div class="medium-5 columns">
+      <%= f.input :first_name, placeholder: 'John' %>
+    </div>
+    <div class="medium-5 columns">
+      <%= f.input :second_name, placeholder: 'Smith' %>
+    </div>
+    <div class="medium-12 columns">
+      <%= f.input :address_line_1, placeholder: 'First Line' %>
+      <%= f.input :address_line_2, placeholder: 'Second Line', label: false %>
+    </div>
+    <div class="medium-6 columns">
+      <%= f.input :city, placeholder: 'Town/City', label: false %>
+    </div>
+    <div class="medium-6 columns">
+      <%= f.input :postcode, placeholder: 'Postcode', label: false %>
+    </div>
+    <div class="medium-6 columns">
+      <%= f.input :contact_number, placeholder: '01234 567890' %>
+    </div>
+    <div class="medium-6 columns">
+      <%= f.input :contact_email, placeholder: 'john.smith@sample.com' %>
+    </div>
+    <div class="medium-6 columns">
+      <%= f.input :occupation, placeholder: 'Burglar' %>
+      <div class="small-12 columns">
+        <%= f.button :submit, "Signup", id: 'looking_button' %>
+        <a href="#!">or send an email to us</a>
+      </div>
+    </div>
+    <div class="medium-6 columns">
+      <%= f.input :qualification_1, placeholder: 'Qualification One', label: 'Qualifications' %>
+      <%= f.input :qualification_2, placeholder: 'Qualification Two', label: false %>
+      <%= f.input :qualification_3, placeholder: 'Qualification Three', label: false %>
+    </div>
+  </div>
+<% end %>
+

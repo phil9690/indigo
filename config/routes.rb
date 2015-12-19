@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   post 'contact/hiring', as: 'hiring_messages'
+  post 'contact/looking', as: 'looking_messages'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
