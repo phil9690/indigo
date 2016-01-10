@@ -13,11 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require vendor/jquery.min.js
-//= require vendor/what-input.min.js
+//= require rails.validations
+//= require rails.validations.simple_form
 //= require foundation
 //= require_tree .
 
 $(document).on('ready page:load', function () {
   $(document).foundation();
+
+  ContactForm.init($('#new_hiring_message'), $('#hiring_button'));
+  ContactForm.init($('#new_looking_message'), $('#looking_button'));
 });
