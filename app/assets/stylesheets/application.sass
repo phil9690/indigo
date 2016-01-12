@@ -76,7 +76,6 @@ nav
   .slogan 
     width: 100%
     padding: 5rem 0 3rem 0
-
   .banner-img 
     z-index: 1
     background-image: image-url("indigo-home-image.jpg")
@@ -86,7 +85,6 @@ nav
     background-repeat: no-repeat
     background-attachment: fixed
     background-size: cover
-
   h2 
     width: 100%
     text-align: center
@@ -97,15 +95,13 @@ nav
     font-family: 'Lato', sans-serif
     span 
       display: block
-      font-weight: 700
+      font-weight: 600
       color: $orange
-
   .features 
     text-align: center
     color: $white
     img 
       max-width: 100px
-
     h4 
       font-size: 1.2rem
       span 
@@ -119,17 +115,13 @@ nav
   img 
     height: 5.5rem
     float: left
-
   h4 
     font-size: 2.5rem
     color: $dark-grey
     line-height: 2.5rem
-
   p 
     font-size: 1.4rem
     color: $blue-grey
-
-
 
 .contact-section 
   background: $blue-grey
@@ -140,12 +132,10 @@ nav
     text-transform: uppercase
     font-weight: 300
     text-align: center
-
   .tabs 
     background: none
     border: none
     display: inline-block
-
   .tabs-title 
     text-transform: uppercase
     a 
@@ -212,3 +202,67 @@ footer
       &:hover 
         i:before 
           transform: rotate(1turn)
+
+
+@media screen and (max-width: 950px)
+  .under-construction
+    width: 90%
+
+@media screen and (max-width: 822px)
+  .contact-section
+    .tabs
+      li
+        a
+          font-size: 1.1em
+
+@media screen and (max-width: 728px)
+  .contact-section
+    .tabs
+      li
+        a
+          font-size: 0.8em
+
+@media screen and (max-width: 639px)
+  .banner
+    height: auto
+    background: $blue-grey
+    padding: 2em 0.5em
+    h2
+      font-size: 1.5em
+      line-height: 1.5em
+    .banner-img
+      background-image: none
+    .slogan
+      padding: 0 0 0 0.5em
+    .features
+      img
+        max-width: 80px
+
+
+
+@media screen and (max-width: 480px)
+  .under-construction
+    width: 100%
+    img
+      width: 80px
+      height: 80px
+      float: none
+      display: block
+      margin: 0 auto
+    h4
+      font-size: 1.4em
+      line-height: 1.4em
+    p
+      font-size: 1em
+
+  .contact-section
+    .tabs
+      li
+        display: block
+        width: 100%
+        &:first-child
+          a
+            border-radius: 10px 10px 0 0
+        &:last-child
+          a
+            border-radius: 0 0 10px 10px
