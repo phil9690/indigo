@@ -1,3 +1,12 @@
+<%= form_for @looking_message, builder: FoundationFormBuilder, validate: true do |f| %>
+  <div class="row">
+  <%= f.text_field :title, placeholder: 'Mr/Mrs/Miss', columns: [6, 6, 8] %>
+  <%= f.text_field :qualification_3, placeholder: 'Site Supervisor', label: false %>
+</div>
+<% end %>
+
+
+
 <%= simple_form_for @looking_message, validate: true do |f| %>
   <div class="row">
     <div class="medium-2 columns">
@@ -27,16 +36,18 @@
     </div>
     <div class="medium-6 columns">
       <%= f.input :occupation, placeholder: 'Burglar' %>
-      <div class="small-12 columns">
-        <%= f.button :submit, "Signup", id: 'looking_button' %>
-        <a href="#!">or send an email to us</a>
-      </div>
     </div>
     <div class="medium-6 columns">
       <%= f.input :qualification_1, placeholder: 'Qualification One', label: 'Qualifications' %>
       <%= f.input :qualification_2, placeholder: 'Qualification Two', label: false %>
       <%= f.input :qualification_3, placeholder: 'Qualification Three', label: false %>
+   </div>
+      <div class="small-12 columns">
+        <%= f.button :submit, "Signup", id: 'looking_button' %>
+        <a href="#!" class="email-us">or send an email to us</a>
+      </div>
+  
     </div>
-  </div>
+
 <% end %>
 
