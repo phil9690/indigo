@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160124194214) do
+ActiveRecord::Schema.define(version: 20160124195335) do
+
+  create_table "job_statuses", force: :cascade do |t|
+    t.string   "status",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "job_types", force: :cascade do |t|
     t.string   "type",       limit: 255
