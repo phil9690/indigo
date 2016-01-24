@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160124195335) do
+ActiveRecord::Schema.define(version: 20160124195438) do
 
   create_table "job_statuses", force: :cascade do |t|
     t.string   "status",     limit: 255
@@ -24,5 +24,22 @@ ActiveRecord::Schema.define(version: 20160124195335) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "job_title",     limit: 255
+    t.string   "city",          limit: 255
+    t.string   "post_code",     limit: 255
+    t.integer  "salary",        limit: 4
+    t.integer  "job_type_id",   limit: 4
+    t.string   "company",       limit: 255
+    t.text     "description",   limit: 65535
+    t.date     "closing_date"
+    t.string   "job_reference", limit: 255
+    t.integer  "job_status_id", limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "jobs", ["job_reference"], name: "index_jobs_on_job_reference", unique: true, using: :btree
 
 end
