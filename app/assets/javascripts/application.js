@@ -20,6 +20,10 @@
 
 $(document).on('ready page:load', function () {
   $(document).foundation();
+  $('#banner').backgroundVideo({
+    $videoWrap: $('#video-wrap'),
+    parallax: true
+  });
 
   ContactForm.init($('#new_hiring_message'), $('#hiring_button'));
   ContactForm.init($('#new_looking_message'), $('#looking_button'));
