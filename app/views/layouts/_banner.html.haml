@@ -1,28 +1,14 @@
 .banner
-  .banner-img
-    .slogan
-      %h2 
-        Delivering Quality
-        %span Labour Supply
-    .row.features
-      .small-12.medium-9.small-centered.columns
-        .row
-          .small-12.medium-4.columns
-            = image_tag 'approved'
-            %h4 
-              Fully compliant and
-              %span vetted workers
-          .small-12.medium-4.columns
-            = image_tag 'cards'
-            %h4
-              %span Industry leading
-              payment solution
-          .small-12.medium-4.columns
-            = image_tag 'cloud'
-            %h4
-              Fully cloud based,
-              %span no more paperwork
-
-
-
-
+  .video-overlay
+  #video-wrap
+    = video_tag "banner-video.mp4", :autoplay => true, :loop => true, :id => "banner", :preload => "metadata"
+  .slogan
+    %h1
+      Business Slogan Here
+  .buttons
+    %a.button.dark-grey{href: "#"}
+      I'm a
+      %span job seeker
+    %a.button.yellow{href: "#"}
+      I'm 
+      %span hiring
