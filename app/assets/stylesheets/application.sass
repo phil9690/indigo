@@ -19,14 +19,16 @@ $orange: #ecb332
 $yellow: #f4a715
 $blue: #2280be
 
+$dark-grey: #313131
+$blue-grey: #374967
+$light-grey: #e0e0e0
+$medium-grey: #757575
+
 $nav-text-grey: #343535
 $nav-li-active-bg: $orange
 $nav-li-active-link-color: $white
 $banner-h2-text-color: $white
 
-$dark-grey: #313131
-$blue-grey: #374967
-$light-grey: #e0e0e0
 
 $facebook-color: #3b5998
 $linkedin-color: #007bb5
@@ -40,34 +42,53 @@ $youtube-color: #cd201f
 .dark-grey
   background: $blue-grey
 
-body, h1, h2, h3, h4, h5, h6, p, a 
+body, p, a 
   font-family: 'Lato', sans-serif
   font-weight: 400
 
+h1, h2, h3, h4, h5, h6
+  font-family: 'Merriweather', serif
+
+video#bgvid
+  position: fixed
+  top: 50%
+  left: 50%
+  min-width: 100%
+  min-height: 100%
+  width: auto
+  height: auto
+  z-index: -100
+  -ms-transform: translateX(-50%) translateY(-50%)
+  -moz-transform: translateX(-50%) translateY(-50%)
+  -webkit-transform: translateX(-50%) translateY(-50%)
+  transform: translateX(-50%) translateY(-50%)
+  background-size: cover
 
 nav 
   width: 100%
-  display: inline-block
+  display: block
   text-align: center
   text-transform: uppercase
   padding: 0.5em 1em 0.2em 1em
   list-style: none
-  //box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
-  position: relative
+  height: 100px
   z-index: 100
   background: none
-  position: fixed
-  top: 0
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  transition: 0.3s ease
   li 
     display: inline-block
     text-align: center
     padding: 0
     margin: 0 0.8rem
+    height: 100px
+    line-height: 70px
   a.active 
-    background: $nav-li-active-bg
+    color: $nav-li-active-bg
     padding: 0.2rem 1rem
     border-radius: 10px
-    color: $nav-li-active-link-color
   ul 
     padding: 0.3rem 0
     margin: 0
@@ -82,9 +103,27 @@ nav
   .logo 
     float: left
   img 
-    width: 150px
+    width: 140px
 
-.video-overlay
+nav.sticky
+  position: fixed
+  top: 0
+  z-index: 200
+  img
+    width: 70px
+
+.scrolled
+  nav.sticky
+    background: $white
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+    a
+      color: $medium-grey
+    a.active
+      color: $nav-li-active-bg
+  .arrow-down
+    opacity: 0
+
+.banner-overlay
   position: absolute
   z-index: 99
   width: 100%
@@ -95,38 +134,23 @@ nav
 .banner 
   //position: relative
   width: 100%
-  height: auto
+  height: 100vh
   overflow: hidden
-  .slogan 
+  background-color: rgba(0,0,0,0.5)
+  .slogan
+    width: 100%
     position: absolute
     z-index: 100
-    top: 40%
+    top: 75%
     transform: translateY(-50%)
-    width: 100%
     padding: 5rem 0 3rem 0
-  .buttons
-    width: 100%
-    position: absolute
-    z-index: 100
-    top: 60%
+  .slogan.scrolled
+    top: 50%
     transform: translateY(-50%)
-    text-align: center
-    text-transform: uppercase
-    .button
-      border-radius: 3px
-      padding: 1em
-      min-width: 20%
-      &:hover
-        background: none
-        border: 2px solid white
-    span
-      font-weight: 600
-    a
-      font-size: 1.3em
   h1
     color: $light-grey
-    text-align: center
     font-size: 3em
+    text-align: center
   .banner-img 
     z-index: 1
     //background-image: image-url("banner-video.mp4")
@@ -160,6 +184,15 @@ nav
       span 
         font-weight: 600
         display: block
+  .arrow-down
+    position: absolute
+    width: 100%
+    text-align: center
+    bottom: 0
+    z-index: 100
+    color: $white
+    font-size: 3em
+    transition: 0.4s
 
 .under-construction 
   padding: 2rem 0
@@ -269,14 +302,52 @@ nav
     margin: 0
 
 .home-about
-  background: $blue-grey
   padding: 1em
+  background-color: rgba(255,255,255,0.9)
+  h2
+    color: $dark-grey
+    text-align: left
+    padding-bottom: 0.5em
   p
-    color: $white
+    color: $medium-grey
     padding: 0
     margin: 0
     font-size: 1.2em
+    text-align: left
+  .buttons
+    width: 100%
     text-align: center
+    text-transform: uppercase
+    .button
+      border-radius: 3px
+      padding: 1em
+      width: 60%
+      margin: 0 auto
+      margin-bottom: 0.5em
+      margin-top: 1em
+      &:hover
+        background: none
+        color: black
+        border: 2px solid black
+    span
+      font-weight: 600
+    a
+      font-size: 1.3em
+
+.home-work
+  background-color: rgba(0,0,0,0.5)
+  padding: 3em 1em 1em 1em
+  h2
+    color: $light-grey
+    font-size: 5em
+    border-top: 10px solid $orange
+    padding-top: 0.5em
+    font-weight: 300
+  h3
+    color: $light-grey
+
+.featured-jobs
+  background-color: rgba(255,255,255,0.9)
 
 footer 
   padding: 1rem
