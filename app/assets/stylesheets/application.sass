@@ -71,7 +71,7 @@ nav
   text-transform: uppercase
   padding: 0.5em 1em 0.2em 1em
   list-style: none
-  height: 100px
+  height: 140px
   z-index: 100
   background: none
   position: absolute
@@ -83,21 +83,22 @@ nav
     text-align: center
     padding: 0
     margin: 0 0.8rem
-    height: 100px
-    line-height: 70px
+    height: 140px
+    line-height: 140px
   a.active 
     color: $nav-li-active-bg
     padding: 0.2rem 1rem
     border-radius: 10px
   ul 
     padding: 0.3rem 0
-    margin: 0
+    width: 87%
+    margin: 0 auto
     text-align: right
   a 
     display: block
     padding: 0.3rem
     color: $light-grey
-    font-size: 1.1em
+    font-size: 1.3em
     &:hover
       color: $white
   .logo 
@@ -109,8 +110,12 @@ nav.sticky
   position: fixed
   top: 0
   z-index: 200
+  height: 100px
   img
     width: 70px
+  li
+    height: 100px
+    line-height: 70px
 
 .scrolled
   nav.sticky
@@ -123,6 +128,10 @@ nav.sticky
   .arrow-down
     opacity: 0
 
+  .banner
+    h1
+      border-top: none
+
 .banner-overlay
   position: absolute
   z-index: 99
@@ -132,7 +141,6 @@ nav.sticky
   opacity: 0.5
 
 .banner 
-  //position: relative
   width: 100%
   height: 100vh
   overflow: hidden
@@ -151,9 +159,10 @@ nav.sticky
     color: $light-grey
     font-size: 3em
     text-align: center
+    padding-top: 1em
+    border-top: 1px solid $light-grey
   .banner-img 
     z-index: 1
-    //background-image: image-url("banner-video.mp4")
     width: 100%
     height: 100%
     background-position: 50% 50%
@@ -302,17 +311,27 @@ nav.sticky
     margin: 0
 
 .home-about
-  padding: 1em
+  padding: 3em 1em
   background-color: rgba(255,255,255,0.9)
+  .blockquote
+    font-family: 'Merriweather', serif
+    font-style: italic
+    font-weight: 300
+    padding: 1em
   h2
+    border-top: 10px solid $orange
     color: $dark-grey
     text-align: left
     padding-bottom: 0.5em
+    padding-top: 1em
+    font-size: 2.7em
+  h3
+    color: $orange
   p
     color: $medium-grey
     padding: 0
     margin: 0
-    font-size: 1.2em
+    font-size: 1em
     text-align: left
   .buttons
     width: 100%
@@ -337,6 +356,9 @@ nav.sticky
 .home-work
   background-color: rgba(0,0,0,0.5)
   padding: 3em 1em 1em 1em
+  .who
+    padding-left: 1.2em
+    padding-top: 70px
   h2
     color: $light-grey
     font-size: 5em
@@ -345,13 +367,50 @@ nav.sticky
     font-weight: 300
   h3
     color: $light-grey
+    font-weight: 300
+    font-size: 1.5em
+    position: relative
+    &:after
+      content: ""
+      position: absolute
+      z-index: 101
+      top: 5px
+      left: -25px
+      border-left: 10px solid $orange
+      border-top: 10px solid transparent
+      border-bottom: 10px solid transparent
+      border-right: 0px solid transparent
+      height: 0
+      width: 0
+    i
+      color: $orange
+  .subheader
+    width: 100%
+    color: $light-grey
+    font-size: 1.2em
+  p
+    color: $medium-grey
 
 .featured-jobs
-  background-color: rgba(255,255,255,0.9)
+  background-color: rgba(0,0,0,0.7)
+  padding: 3em 1em
+  h2
+    color: $orange
+    text-align: center
+    margin-bottom: 1em
+
+.jobs
+  background: none
+
+.job
+  background: $white
+  height: 300px
 
 footer 
   padding: 1rem
   text-align: center
+  background-color: rgba(0,0,0,0.9)
+  color: $light-grey
   li 
     display: inline-block
     margin: 0 1rem
