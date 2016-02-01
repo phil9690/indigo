@@ -23,6 +23,7 @@ $dark-grey: #313131
 $blue-grey: #374967
 $light-grey: #e0e0e0
 $medium-grey: #757575
+$grey-lighten-1: #bdbdbd
 
 $nav-text-grey: #343535
 $nav-li-active-bg: $orange
@@ -389,10 +390,10 @@ nav.sticky
     color: $light-grey
     font-size: 1.2em
   p
-    color: $medium-grey
+    color: $grey-lighten-1
 
 .featured-jobs
-  background-color: rgba(0,0,0,0.7)
+  background-color: rgba(0,0,0,0.8)
   padding: 3em 1em
   h2
     color: $orange
@@ -407,16 +408,37 @@ nav.sticky
   height: 300px
 
 footer 
-  padding: 1rem
-  text-align: center
+  text-align: left
   background-color: rgba(0,0,0,0.9)
   color: $light-grey
+  .footer-info
+    padding: 1em 0
+  h6
+    font-family: "Lato", sans-serif
+    text-transform: uppercase
+    font-weight: 700
+    display: inline-block
+    border-bottom: 2px solid $light-grey
+    margin-bottom: 1em
   li 
     display: inline-block
     margin: 0 1rem
     a 
       color: $dark-grey
-  .social-icons 
+  .services
+    ul
+      padding: 0
+      margin: 0
+    li
+      display: block
+      padding: 0
+      margin: 0
+    a
+      color: $orange
+
+  .social-icons
+    padding: 0
+    margin: 0
     li 
       padding: 0
       margin: 0 0.2em
@@ -426,9 +448,12 @@ footer
           transform: rotate(1turn)
   .info
     font-size: 0.8em
-
     span
       display: block
+  .copyright
+    background-color: rgba(0,0,0,0.9)
+    padding: 0.5em
+    text-align: center
 
 
 @media screen and (max-width: 950px)
