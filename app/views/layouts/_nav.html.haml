@@ -3,10 +3,10 @@
     %li.logo
       = image_tag 'indigo-logo.png'
     %li
-      %a.active{href: "#contact"} Home
+      = link_to "Home", root_path, class: "active"
     %li
       %a{href: "#"} Who we are
     %li
-      %a{href: "#"} What we do
+      = link_to "What we do", what_we_do_path
     %li
       %a{href: "#"} Get in touch
