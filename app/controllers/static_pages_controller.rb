@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def who
+  end
 end

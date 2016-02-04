@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'what-we-do' => 'static_pages#about'
+  get 'who-we-are' => 'static_pages#who'
 
   post 'contact/hiring', as: 'hiring_messages'
   post 'contact/looking', as: 'looking_messages'
