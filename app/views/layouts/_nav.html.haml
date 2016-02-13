@@ -1,4 +1,4 @@
-%nav#nav
+%nav#nav.sticky
   %ul
     %li.logo
       = image_tag 'indigo-logo.png'
@@ -9,4 +9,4 @@
     %li
       = link_to "What we do", what_we_do_path
     %li
-      %a{href: "#"} Get in touch
+      = link_to "Get in touch", get_in_touch_path
