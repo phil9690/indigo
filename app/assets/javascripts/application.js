@@ -21,27 +21,25 @@
 $(document).on('ready page:load', function () {
   $(document).foundation();
 
-
-  $('#banner').backgroundVideo({
-    $videoWrap: $('#video-wrap'),
-    parallax: true
-  });
-
-$('#banner2').backgroundVideo({
-    $videoWrap: $('#video-wrap2'),
-    parallax: true
-  });
-
   ContactForm.init($('#new_hiring_message'), $('#hiring_button'));
   ContactForm.init($('#new_looking_message'), $('#looking_button'));
 
-  $(window).scroll(function(){
-    if ($(window).scrollTop() > 1){
-        $('#nav').addClass('sticky')
-    } else {
-        $('#nav').removeClass('sticky')
-    }
-  });
+   $('#rssFeed').FeedEk({
+     FeedUrl: 'https://www.rec.uk.com/rss',
+     MaxCount: 10,
+     ShowDesc: true,
+     DescCharacterLimit: 80,
+     ShowPubDate: false,
+     TitleLinkTarget: '_blank',
+   });
+
+//  $(window).scroll(function(){
+//    if ($(window).scrollTop() > 1){
+//        $('#nav').addClass('sticky')
+//    } else {
+//        $('#nav').removeClass('sticky')
+//    }
+//  });
 });
 
 $(document).ready(function(){
@@ -56,12 +54,12 @@ $(document).ready(function(){
       $('body').removeClass('scrolled');
     }
 
-    if (scrollTop > stickyNavTop) {
-      $('#nav').addClass('sticky');
-      $('.arrow-down').addClass('hidden');
-    } else {
-      $('#nav').removeClass('sticky');
-    }
+  //  if (scrollTop > stickyNavTop) {
+  //    $('#nav').addClass('sticky');
+  //    $('.arrow-down').addClass('hidden');
+  //  } else {
+   //   $('#nav').removeClass('sticky');
+  //  }
   };
 
   stickyNav();
