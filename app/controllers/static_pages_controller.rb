@@ -9,4 +9,9 @@ class StaticPagesController < ApplicationController
 
   def who
   end
+
+  def contact
+    @hiring_message = HiringMessage.new
+    @looking_message = LookingMessage.new
+  end
 end
