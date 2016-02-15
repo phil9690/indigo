@@ -24,6 +24,19 @@ class ContactController < ApplicationController
     end
   end
 
+  # POST /enquiry
+  def enquiry
+    @message = EnquiryMessage.new(enquire_message_params)
+
+    if @message.valid?
+      ContactMailer.enquiry(@message).deliver_now
+      render status: :created, nothing: true
+    else
+      render status: :unprocessable_entity, nothing: true
+    end
+  end
+
+
   private
 
   def hire_message_params
@@ -33,4 +46,9 @@ class ContactController < ApplicationController
   def look_message_params
     params.require(:looking_message).permit!
   end
+
+  def enquire_message_params
+    params.require(:enquiry_message).permit!
+  end
+
 end

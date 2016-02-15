@@ -13,5 +13,6 @@ class StaticPagesController < ApplicationController
   def contact
     @hiring_message = HiringMessage.new
     @looking_message = LookingMessage.new
+    @enquiry_message = EnquiryMessage.new
   end
 end
