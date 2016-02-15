@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   post 'contact/hiring', as: 'hiring_messages'
   post 'contact/looking', as: 'looking_messages'
+  post 'contact/enquiry', as: 'enquiry_messages'
 
   # User-only backend
   namespace :backend, path: 'admin' do
