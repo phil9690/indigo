@@ -1,0 +1,29 @@
+= simple_form_for @hiring_message, validate: true do |f|
+  .row
+    .medium-2.columns
+      = f.input :title, placeholder: 'Mr/Mrs/Miss'
+    .medium-5.columns
+      = f.input :first_name, placeholder: 'John'
+    .medium-5.columns
+      = f.input :second_name, placeholder: 'Smith'
+    .medium-12.columns
+      = f.input :address_line_1, placeholder: 'First Line', label: 'Address'
+      = f.input :address_line_2, placeholder: 'Second Line', label: false
+    .medium-6.columns
+      = f.input :city, placeholder: 'Town/City', label: false
+    .medium-6.columns
+      = f.input :postcode, placeholder: 'Postcode', label: false
+    .medium-6.columns
+      = f.input :contact_number, placeholder: '01234 567890'
+    .medium-6.columns
+      = f.input :contact_email, placeholder: 'john.smith@sample.com'
+    .medium-6.columns
+      = f.input :work_location, placeholder: 'Newcastle Upon Tyne'
+      .small-12.columns
+        = f.button :submit, "Signup", id: 'hiring_button'
+        %a.email-us{href: "#!"} or send an email to us
+    .medium-6.columns
+      = f.input :type_of_worker_1, placeholder: 'Labourer'
+      = f.input :type_of_worker_2, placeholder: 'Machine Operator', label: false
+      = f.input :type_of_worker_3, placeholder: 'Site Supervisor', label: false
+

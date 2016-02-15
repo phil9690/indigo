@@ -28,7 +28,8 @@ $medium-grey: #757575
 $grey-lighten-1: #bdbdbd
 
 $nav-text-grey: #343535
-$nav-li-active-bg: $orange
+$nav-hover-color: $orange
+$nav-active-bg: $orange
 $nav-li-active-link-color: $white
 $banner-h2-text-color: $white
 
@@ -38,6 +39,9 @@ $linkedin-color: #007bb5
 $google-color: #dd4b39
 $twitter-color: #00aced
 $youtube-color: #cd201f
+
+.messageform
+  display: none
 
 .dark-bg
   background-color: rgba(0,0,0,0.7)
@@ -104,28 +108,30 @@ video#bgvid
 
 .static_pages.home
   nav
-    position: absolute
-    top: 50%
-    //transform: translateY(-50%)
     background: none
     padding-top: 2em
+    position: absolute
+    top: 0
+    z-index: 1000
+    box-shadow: none
     img
       width: 140px
     a
       color: $light-grey
+      &:hover
+        color: $nav-hover-color
     a.active
-      color: $nav-li-active-bg
+      color: $nav-active-bg
   nav.sticky
     position: fixed
     top: 0
     z-index: 200
-    //height: 100px
     transform: translateY(0)
     img
       width: 70px
-    li
-    //  height: 100px
-    //  line-height: 70px
+    a
+    &:hover
+      color: $nav-hover-color
 .static_pages.home.scrolled
   nav.sticky
     background: $white
@@ -133,12 +139,13 @@ video#bgvid
     padding-top: 0
     a
       color: $medium-grey
+      &:hover
+        color: $nav-hover-color
     a.active
-      color: $nav-li-active-bg
+      color: $nav-active-bg
   .arrow-down, .scroll-down
     opacity: 0
   
-
 nav 
   width: 100%
   display: block
@@ -146,9 +153,10 @@ nav
   text-transform: uppercase
   padding: 0
   list-style: none
-  height: 140px
+  height: 160px
   z-index: 100
   background: $white
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
   transition: 0.3s ease
   li 
     display: inline-block
@@ -158,9 +166,7 @@ nav
     height: 140px
     line-height: 140px
   a.active 
-    color: $nav-li-active-bg
-    padding: 0.2rem 1rem
-    border-radius: 10px
+    color: $nav-active-bg
   ul 
     padding: 0
     width: 90%
@@ -172,11 +178,11 @@ nav
     color: $medium-grey
     font-size: 1.5em
     &:hover
-      color: $white
+      color: $orange
   .logo 
     float: left
   img 
-    width: 70px
+    width: 140px
 
 nav.sticky
   position: fixed
@@ -193,10 +199,6 @@ nav.sticky
   nav.sticky
     background: $white
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
-    a
-      color: $medium-grey
-    a.active
-      color: $nav-li-active-bg
 
   .banner
     h1
@@ -327,56 +329,33 @@ nav.sticky
       font-size: 2em
 
 .contact-section 
-  background: $blue-grey
+  //background: $blue-grey
   padding: 2rem 1rem
-  color: $white
-  text-align: center
+  color: $dark-grey
+  .side
+    background: #fafafa
+    border-radius: 2px
+    h4
+      font-family: "Lato", sans-serif
+      font-weight: 600
+      color: $orange
+      font-size: 1.2em
+      text-align: left
+      margin: 0
   h4 
     text-transform: uppercase
-    font-weight: 300
-    text-align: center
-  .tabs 
-    background: none
-    border: none
-    display: inline-block
-  .tabs-title 
-    text-transform: uppercase
-    a 
-      border: 2px solid $white
-      background: none
-      font-size: 1.3rem
-      color: $white
-
-    &:first-child a 
-      border-radius: 10px 0 0 10px
-
-    &:last-child a 
-      border-radius: 0 10px 10px 0
-
-  .is-active a 
-    background: $orange
-    color: $white
-    text-decoration: underline
-
-  .tabs-content 
-    background: none
-    border: none
-
-  input 
+  input, select, textarea
     border-radius: 10px
     margin-bottom: 1.5rem
-
   label 
     text-align: left
-    color: $white
+    color: $dark-grey
     font-size: 1rem
-
   .button 
     background: $yellow !important
     border-radius: 10px
     font-family: 'Pacifico', cursive
     font-size: 1.2rem
-
   a.email-us 
     text-decoration: underline
     background: none
@@ -565,7 +544,6 @@ nav.sticky
 
 
 .about-header
-  margin-top: 100px
   background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0.7)),to(rgba(0,0,0,0.9)))
   padding: 3em 1em 1em 1em
   height: 70vh

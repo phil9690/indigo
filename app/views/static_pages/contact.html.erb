@@ -1,11 +1,21 @@
-<br/>
-<br/>
-<p>
+
+<%= render partial: 'contact_form' %>
+
+<%= render "layouts/footer" %>
+<!-- 
+
+<div class="row">
+  <div class="small-12 columns">
+  <p>
 We are available by phone, email, skype and online via facebook or linkedin to answer all your questions and (bonus) we are even happy to.
-</p>
+  </p>
 <p>
   If you'd like to contact us via the website please complete the enquiry form below.
 </p>
+</div>
+</div>
+
+<#%= render partial: 'contact_form' %>
 
 <div class="contact-section" id="contact">
   <div class="row">
@@ -19,15 +29,14 @@ We are available by phone, email, skype and online via facebook or linkedin to a
 
       <div class="tabs-content" data-tabs-content="example-tabs">
         <div class="tabs-panel is-active" id="working">
-          <%= render partial: 'working_form' %>
+          <#%= render partial: 'working_form' %>
         </div>
         <div class="tabs-panel" id="hiring">
-          <%= render partial: 'hiring_form' %>
+          <#%= render partial: 'hiring_form' %>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
-
+-- >

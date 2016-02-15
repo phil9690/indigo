@@ -1,0 +1,12 @@
+= simple_form_for @enquiry_message, validate: true do |f|
+  .row
+    .medium-6.columns
+      = f.input :first_name, placeholder: 'John'
+    .medium-6.columns
+      = f.input :second_name, placeholder: 'Smith'
+    .medium-12.columns
+      =f.input :contact_email, placeholder: 'john.smith@example.com'
+    .medium-12.columns
+      =f.input :message, as: :text, placeholder: 'Type your message here'
+    .medium-12.columns
+      = f.button :submit, "Send", id: 'enquiry_button'

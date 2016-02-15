@@ -1,0 +1,23 @@
+.contact-section#contact
+  .row
+    .medium-9.columns
+      %p
+        We are available by phone, email, skype and online via facebook or linkedin to answer all your questions and (bonus) we are even happy to.
+      %p
+        If you'd like to contact us via the website please complete the enquiry form below.
+      = select_tag :form_selector, options_for_select([ "General Enquiry", "I'm looking for work", "I'm looking to hire" ]) 
+      .looking.messageform
+        = render partial: 'working_form'
+      .hiring.messageform
+        = render partial: 'hiring_form'
+      .enquiry.messageform
+        = render partial: 'enquiry_form'
+    .medium-3.columns.side
+      %h4 Email
+      %p
+        = t("email")
+      %h4 Phone
+      %p
+        = t("phone_number")
+      %h4 Skype
+      %p skype.address
