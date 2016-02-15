@@ -6,10 +6,16 @@
           %h6 Company
           %span Indigo Recruitment Services Ltd
           %span Registered company in England and Wales
-          %span Company number 9827979
+          %span
+            Company number
+            = t("company_number")
           %span Registered Office: 79 Bentinck road, Newcastle Upon Tyne, NE4 6UX
-          %span REC membership number: 00093365
-          %span VAT number: 231440550
+          %span
+            REC membership number:
+            = t("rec_membership_number")
+          %span
+            VAT number:
+            = t("vat_number")
       
       .small-12.medium-4.columns
         .small-12.columns.services
@@ -28,8 +34,12 @@
       .small-12.medium-4.columns
         .small-12.columns.contact
           %h6 Contact
-          %span Tel: 0191 2267986
-          %span Email: info@indigo-recruitment.co.uk        
+          %span
+            Tel:
+            = t("phone_number")
+          %span
+            Email:
+            = t("email")        
           = link_to "Contact", get_in_touch_path
 
         .small-12.columns.social-media
