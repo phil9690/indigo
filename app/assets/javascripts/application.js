@@ -34,9 +34,9 @@ $(document).on('ready page:load', function () {
      TitleLinkTarget: '_blank',
    });
 
-  $('#newsSlider').unslider({
-    infinite: true 
-  });
+ // $('#newsSlider').unslider({
+ //   infinite: true 
+ // });
 
   $(window).scroll(function(){
     if ($(window).scrollTop() > 1){
