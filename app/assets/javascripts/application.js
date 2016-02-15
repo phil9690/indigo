@@ -23,6 +23,7 @@ $(document).on('ready page:load', function () {
 
   ContactForm.init($('#new_hiring_message'), $('#hiring_button'));
   ContactForm.init($('#new_looking_message'), $('#looking_button'));
+  ContactForm.init($('#new_enquiry_message'), $('#enquiry_button'));
 
    $('#rssFeed').FeedEk({
      FeedUrl: 'https://www.rec.uk.com/rss',
@@ -33,13 +34,38 @@ $(document).on('ready page:load', function () {
      TitleLinkTarget: '_blank',
    });
 
-//  $(window).scroll(function(){
-//    if ($(window).scrollTop() > 1){
-//        $('#nav').addClass('sticky')
-//    } else {
-//        $('#nav').removeClass('sticky')
-//    }
-//  });
+  $('#newsSlider').unslider({
+    infinite: true 
+  });
+
+  $(window).scroll(function(){
+    if ($(window).scrollTop() > 1){
+        $('#nav').addClass('sticky')
+    } else {
+        $('#nav').removeClass('sticky')
+    }
+  });
+
+  $("#form_selector").change(function(){
+    $(this).find("option:selected").each(function(){
+      if($(this).attr("value")=="General Enquiry"){
+        $(".messageform").not(".enquiry").hide();
+        $(".enquiry").show();
+      }
+      else if($(this).attr("value")=="I'm looking for work"){
+        $(".messageform").not(".looking").hide();
+        $(".looking").show();
+      }
+      else if($(this).attr("value")=="I'm looking to hire"){
+        $(".messageform").not(".hiring").hide();
+        $(".hiring").show();
+      }
+      else{
+        $(".messageform").hide();
+      }
+    });
+  }).change();
+
 });
 
 $(document).ready(function(){
@@ -47,23 +73,23 @@ $(document).ready(function(){
 
   var stickyNav = function() {
     var scrollTop = $(window).scrollTop();
-    
+
     if (scrollTop > 53) {
       $('body').addClass('scrolled');
     } else {
       $('body').removeClass('scrolled');
     }
 
-  //  if (scrollTop > stickyNavTop) {
-  //    $('#nav').addClass('sticky');
-  //    $('.arrow-down').addClass('hidden');
-  //  } else {
-   //   $('#nav').removeClass('sticky');
-  //  }
+    //  if (scrollTop > stickyNavTop) {
+    //    $('#nav').addClass('sticky');
+    //    $('.arrow-down').addClass('hidden');
+    //  } else {
+    //   $('#nav').removeClass('sticky');
+    //  }
   };
 
   stickyNav();
-  
+
   $(window).scroll(function() {
     stickyNav();
   });
