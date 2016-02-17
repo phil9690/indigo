@@ -43,6 +43,9 @@ $youtube-color: #cd201f
 .messageform
   display: none
 
+.indented
+  margin-left: 2em
+
 .dark-bg
   background-color: rgba(0,0,0,0.7)
   width: 100%
@@ -688,9 +691,20 @@ footer
 
 .terms
   padding: 1em 0
-  td
-    border-top: 1px solid #000
-    border-bottom: 1px solid #000
+  table
+    border: 1px solid black
+  h4
+    border-bottom: 2px solid #64b5f6
+    color: #64b5f6
+    font-size: 1.2em
+  h5
+    font-size: 1.2em
+    font-weight: 300
+  span.bold
+    margin-right: 2em
+  .indented
+    span.bold
+      margin-right: 1em
 
 // RSS Feed
 .feedEkList
