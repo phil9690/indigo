@@ -1,4 +1,4 @@
-= simple_form_for @hiring_message, validate: true do |f|
+= simple_form_for @looking_message, validate: true do |f|
   .row
     .medium-2.columns
       = f.input :title, placeholder: 'Mr/Mrs/Miss'
@@ -18,12 +18,12 @@
     .medium-6.columns
       = f.input :contact_email, placeholder: 'john.smith@sample.com'
     .medium-6.columns
-      = f.input :work_location, placeholder: 'Newcastle Upon Tyne'
+      = f.input :occupation, placeholder: 'Burglar'
     .medium-6.columns
-      = f.input :type_of_worker_1, placeholder: 'Labourer'
-      = f.input :type_of_worker_2, placeholder: 'Machine Operator', label: false
-      = f.input :type_of_worker_3, placeholder: 'Site Supervisor', label: false
+      = f.input :qualification_1, placeholder: 'Qualification One', label: 'Qualifications'
+      = f.input :qualification_2, placeholder: 'Qualification Two', label: false
+      = f.input :qualification_3, placeholder: 'Qualification Three', label: false
     .small-12.columns
-    = f.input :terms_of_service, as: :boolean
-    = f.button :submit, "Signup", id: 'hiring_button'
-    %a.email-us{href: "#!"} or send an email to us
+      = f.input :terms_of_service, as: :boolean
+      = f.button :submit, "Signup", id: 'looking_button'
+      <a href="#!" class="email-us">or send an email to us</a>
