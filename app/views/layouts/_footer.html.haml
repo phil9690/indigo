@@ -7,9 +7,11 @@
           %span Indigo Recruitment Services Ltd
           %span Registered company in England and Wales
           %span
-            Company number
+            Company number:
             = t("company_number")
-          %span Registered Office: 79 Bentinck road, Newcastle Upon Tyne, NE4 6UX
+          %span Registered Office: 79 Bentinck road,
+          %span Newcastle Upon Tyne,
+          %span NE4 6UX
           %span
             REC membership number:
             = t("rec_membership_number")
@@ -22,13 +24,13 @@
           %h6 Services
           %ul
             %li
-              %a{href: "#"} Recruitment
+              = link_to 'Recuitment', who_we_are_path
             %li
-              %a{href: "#"} Hiring
+              = link_to 'Hiring', what_we_do_path
         .small-12.columns.legal
           %h6 Legal
-          %a{href: "#"} Privacy Policy
-          %a{href: "#"} Terms &amp Conditions
+          = link_to "Privacy and Cookie Policy", privacy_path
+          = link_to "Terms & Conditions", terms_path
 
 
       .small-12.medium-4.columns
@@ -60,9 +62,10 @@
 
   .copyright
     .row
-      .small-12.columns
-        %span 
-          &copy; Copyright
-          = Time.now.year
-          Indigo Recruitment Services Ltd
+      .small-12.medium-8.large-6.small-centered.columns
+        %p 
+          Copyright Notice
+        %p
+          &copy; Indigo Recruitment Services Limited, All Rights Reserved.
+        %p The content of this website is protected by the copyright laws of England and Wales and by international laws and conventions.  No content from this website may be copied, reproduced or revised without the prior written consent of Indigo Recruitment Services Limited.  Copies of content may be saved and/or printed for personal use only.
 
