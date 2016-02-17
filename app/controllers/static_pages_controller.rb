@@ -1,7 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    @hiring_message = HiringMessage.new
-    @looking_message = LookingMessage.new
   end
 
   def about
@@ -14,5 +12,11 @@ class StaticPagesController < ApplicationController
     @hiring_message = HiringMessage.new
     @looking_message = LookingMessage.new
     @enquiry_message = EnquiryMessage.new
+  end
+
+  def terms
+  end
+
+  def privacy
   end
 end

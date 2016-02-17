@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   get 'who-we-are' => 'static_pages#who'
   get 'get-in-touch' => 'static_pages#contact'
 
+  # Legally required links
+  # Terms and conditions
+  get 'terms' => 'static_pages#terms'
+  # Privacy policy
+  get 'privacy' => 'static_pages#privacy'
+
   post 'contact/hiring', as: 'hiring_messages'
   post 'contact/looking', as: 'looking_messages'
   post 'contact/enquiry', as: 'enquiry_messages'
