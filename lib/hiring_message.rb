@@ -6,10 +6,13 @@ class HiringMessage
 
   attr_accessor :title, :first_name, :second_name, :address_line_1, :address_line_2, :city, :postcode, :contact_number, :contact_email
   attr_accessor :work_location, :type_of_worker_1, :type_of_worker_2, :type_of_worker_3
+  attr_accessor :terms_of_service
 
   validates :title, :first_name, :second_name, :address_line_1, :address_line_2, :city, :postcode, :contact_number, :contact_email, presence: true
 
   validates :contact_email, email: true
+
+  validates :terms_of_service, acceptance: true
 
  def full_name
   "#{title} #{first_name} #{second_name}"
