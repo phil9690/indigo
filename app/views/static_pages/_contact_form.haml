@@ -13,11 +13,12 @@
       .enquiry.messageform
         = render partial: 'enquiry_form'
     .medium-3.columns.side
-      %h4 Email
-      %p
+      .contact-info
+        %i.fi.flaticon-email
         = t("email")
-      %h4 Phone
-      %p
+      .contact-info
+        %i.fi.flaticon-phone
         = t("phone_number")
-      %h4 Skype
-      %p skype.address
+      .contact-info
+        %i.fi.flaticon-skype
+        skype.address
