@@ -11,10 +11,13 @@
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="http://www.jquery-plugins.net/FeedEK/FeedEk.min.js"></script>
   <%= csrf_meta_tags %>
+  <script type="text/javascript">
+  window.cookieconsent_options = {"message":"We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on Our website. However, if you would like to, you can change your cookie settings at an time. For more information see our ","dismiss":"Got it!","learnMore":"Privacy and Cookie Policy","link":"http://indigo-recruitment.co.uk/privacy","theme":"dark-top"};
+      </script>
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
 <!-- <#%= render 'shared/sticky_social_icons' %> -->
-
 <%= render 'layouts/nav' %>
 <%= yield %>
 <%= render "layouts/footer" %>
