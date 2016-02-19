@@ -673,8 +673,10 @@ footer
       margin: 0 0.2em
     a 
       &:hover 
-        i:before 
-          transform: rotate(1turn)
+        i
+          &:before
+            color: #000
+            background: $white
   .info, .contact, .legal
     font-size: 0.8em
     a
