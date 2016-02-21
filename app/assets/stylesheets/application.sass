@@ -225,7 +225,6 @@ nav.sticky
     left: 5%
     opacity: 1
     transition: 0.6s
-    //transform: translateY(-50%)
     padding: 1em
   .slogan.scrolled
     top: 50%
@@ -411,9 +410,9 @@ nav.sticky
       width: 90%
       margin-bottom: 0.5em
       margin-top: 1em
-      font-weight: 300
+      font-weight: 600
       float: left
-      font-family: 'Merriweather', serif
+      font-family: 'Lato', sans-serif
       &:hover
         background: none
         color: black
@@ -421,12 +420,6 @@ nav.sticky
     span
       font-weight: 300
       display: inline-block
-      &:first-child
-        border-right: 1px solid $light-grey
-        padding-right: 0.5em
-        width: 20%
-      &:last-child
-        padding-left: 0.5em
     a
       font-size: 1.3em
 
@@ -550,7 +543,7 @@ nav.sticky
 
 
 .about-header
-  background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0.7)),to(rgba(0,0,0,0.9)))
+  background: rgba(0,0,0,0.5)
   padding: 3em 1em 1em 1em
   height: 70vh
   h1
@@ -558,7 +551,6 @@ nav.sticky
     width: 90%
     margin: 0 auto
     font-size: 3em
-    //border-top: 10px solid $orange
     padding-top: 0.5em
     padding-bottom: 1em
     font-weight: 300
@@ -742,10 +734,38 @@ footer
 .bgimage
   display: none
 
-@media screen and (max-width: 965px)
-  .scrolled
-    .small-nav-top-bar
+@media all and (orientation: portrait)
+  .bg-image
+    min-width: 160%
 
+@media all and (orientation: landscape)
+  .bg-image
+    min-width: 100%
+
+@media screen and (max-width: 1024px)
+  video#bgvid
+    display: none
+
+  .banner
+    height: auto
+    position: relative
+    padding: 0
+    min-height: 70vh
+    .overlay
+      position: absolute
+      width: 100%
+      height: 100%
+      z-index: 99
+      background: rgba(0,0,0,0.5)
+    .slogan
+      left: auto
+      position: absolute
+      top: 160px
+      left: 5%
+      h1
+        font-size: 2em
+
+@media screen and (max-width: 965px)
   .small-nav-top-bar
     width: 100%
     height: 70px
@@ -758,6 +778,9 @@ footer
       float: left
     img
       width: 50px
+    i.material-icons
+      height: 70px
+      line-height: 70px
   #small-nav-activator
     float: right
     max-height: 70px
@@ -772,18 +795,25 @@ footer
   #small-nav
     height: 100vh
     position: fixed
-    top: 70px
+    top: 0
     right: -100%
     min-width: 40%
     transition: 0.3s
-    padding: 1em
+    padding: 1em 0
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
     ul
       text-align: center
+      margin: 0
+      padding: 0
       li
+        width: 100%
         list-style-type: none
         font-size: 1.4em
+        padding: 0.5em 0
+        margin: 0.5em 0
         a
+          display: block
+          width: 100%
           color: $dark-grey
         a.active
           color: $orange
@@ -793,40 +823,18 @@ footer
 
   .desktop-nav
     display: none
-
-  video#bgvid
-    display: none
   
   .banner
-    height: auto
-    position: relative
-    padding: 0
-    .overlay
-      position: absolute
-      width: 100%
-      height: 100%
-      z-index: 99
-      background: rgba(0,0,0,0.5)
-    .bgimage
-      display: block
-      img
-        background-repeat:no-repeat
-        background-attachment:fixed
-        -o-background-size: cover
-        -moz-background-size: cover
-        -webkit-background-size:cover
-        z-index: -100
-        width: 100%
-        height: 100%
     .slogan
-      left: auto
-      position: absolute
       top: 0
       h1
-        font-size: 2em
+        font-size: 2.5em
 
   .content
     margin-top: 70px
+
+  .content.active
+    background-color: rgba(0,0,0,0.7)
 
   .home-about
     h2
@@ -838,11 +846,18 @@ footer
 
   .about-header
     h1
-      font-size: 2em
+      font-size: 2.5em
 
-@media screen and (max-width: 950px)
-  .under-construction
-    width: 90%
+
+@media screen and (max-width: 860px)
+  .banner
+    .slogan
+      h1
+        font-size: 1.8em
+
+  .about-header
+    h1
+      font-size: 1.8em
 
 @media screen and (max-width: 639px)
   .home-about
@@ -851,9 +866,12 @@ footer
 
   .about-header
     h1
-      font-size: 1.2em
+      font-size: 1.5em
 
 @media screen and (max-width: 480px)
+  #small-nav
+    min-width: 60%
+
   .banner
     .slogan
       h1
