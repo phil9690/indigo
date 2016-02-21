@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6
 a
   color: $orange
 
-video#bgvid
+.bg-image, #home-bg-mobile, video#bgvid
   position: fixed
   top: 50%
   left: 50%
@@ -101,20 +101,8 @@ video#bgvid
   transform: translateX(-50%) translateY(-50%)
   background-size: cover
 
-.bg-image
-  position: fixed
-  top: 50%
-  left: 50%
-  min-width: 100%
-  min-height: 100%
-  width: auto
-  height: auto
-  z-index: -100
-  -ms-transform: translateX(-50%) translateY(-50%)
-  -moz-transform: translateX(-50%) translateY(-50%)
-  -webkit-transform: translateX(-50%) translateY(-50%)
-  transform: translateX(-50%) translateY(-50%)
-  background-size: cover
+#home-bg-mobile
+  display: none
 
 .static_pages.home
   nav
@@ -745,66 +733,134 @@ footer
   font-size: 1.1em
   color: #AAAAAA
 
+.tablet-nav
+  display: none
+
+.small-nav-top-bar, #small-nav
+  display: none
+
+.bgimage
+  display: none
+
+@media screen and (max-width: 965px)
+  .scrolled
+    .small-nav-top-bar
+
+  .small-nav-top-bar
+    width: 100%
+    height: 70px
+    line-height: 70px
+    position: fixed
+    top: 0
+    padding: 0 1em
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+    .logo
+      float: left
+    img
+      width: 50px
+  #small-nav-activator
+    float: right
+    max-height: 70px
+    i.material-icons
+      font-size: 3em
+
+  #small-nav, .small-nav-top-bar
+    display: block
+    background: $white
+    overflow: hidden
+    z-index: 1002
+  #small-nav
+    height: 100vh
+    position: fixed
+    top: 70px
+    right: -100%
+    min-width: 40%
+    transition: 0.3s
+    padding: 1em
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+    ul
+      text-align: center
+      li
+        list-style-type: none
+        font-size: 1.4em
+        a
+          color: $dark-grey
+        a.active
+          color: $orange
+
+  #small-nav.active
+    right: 0
+
+  .desktop-nav
+    display: none
+
+  video#bgvid
+    display: none
+  
+  .banner
+    height: auto
+    position: relative
+    padding: 0
+    .overlay
+      position: absolute
+      width: 100%
+      height: 100%
+      z-index: 99
+      background: rgba(0,0,0,0.5)
+    .bgimage
+      display: block
+      img
+        background-repeat:no-repeat
+        background-attachment:fixed
+        -o-background-size: cover
+        -moz-background-size: cover
+        -webkit-background-size:cover
+        z-index: -100
+        width: 100%
+        height: 100%
+    .slogan
+      left: auto
+      position: absolute
+      top: 0
+      h1
+        font-size: 2em
+
+  .content
+    margin-top: 70px
+
+  .home-about
+    h2
+      font-size: 2em
+  
+  .home-work
+    h2
+      font-size: 4em
+
+  .about-header
+    h1
+      font-size: 2em
 
 @media screen and (max-width: 950px)
   .under-construction
     width: 90%
 
-@media screen and (max-width: 822px)
-  .contact-section
-    .tabs
-      li
-        a
-          font-size: 1.1em
-
-@media screen and (max-width: 728px)
-  .contact-section
-    .tabs
-      li
-        a
-          font-size: 0.8em
-
 @media screen and (max-width: 639px)
-  .banner
-    height: auto
-    background: $blue-grey
-    padding: 2em 0.5em
+  .home-about
     h2
       font-size: 1.5em
-      line-height: 1.5em
-    .banner-img
-      background-image: none
-    .slogan
-      padding: 0 0 0 0.5em
-    .features
-      img
-        max-width: 80px
 
-
+  .about-header
+    h1
+      font-size: 1.2em
 
 @media screen and (max-width: 480px)
-  .under-construction
-    width: 100%
-    img
-      width: 80px
-      height: 80px
-      float: none
-      display: block
-      margin: 0 auto
-    h4
-      font-size: 1.4em
-      line-height: 1.4em
+  .banner
+    .slogan
+      h1
+        font-size: 1.2em
+
+  .home-about
+    h2
+      font-size: 1.2em
     p
       font-size: 1em
-
-  .contact-section
-    .tabs
-      li
-        display: block
-        width: 100%
-        &:first-child
-          a
-            border-radius: 10px 10px 0 0
-        &:last-child
-          a
-            border-radius: 0 0 10px 10px

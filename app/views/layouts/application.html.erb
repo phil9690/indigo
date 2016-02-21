@@ -19,7 +19,9 @@
 <body class="<%= controller_name %> <%= action_name %>">
 <!-- <#%= render 'shared/sticky_social_icons' %> -->
 <%= render 'layouts/nav' %>
-<%= yield %>
-<%= render "layouts/footer" %>
+<div class="content">
+  <%= yield %>
+  <%= render "layouts/footer" %>
+</div>
 </body>
 </html>

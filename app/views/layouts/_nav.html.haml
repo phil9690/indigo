@@ -1,4 +1,4 @@
-%nav#nav
+%nav#nav.desktop-nav
   %ul
     %li.logo
       = image_tag 'indigo-logo.png'
@@ -10,3 +10,22 @@
       = link_to "What we do", what_we_do_path, class: is_active('static_pages', 'about')
     %li
       = link_to "Get in touch", get_in_touch_path, class: is_active('static_pages', 'contact')
+
+
+.small-nav-top-bar
+  .logo
+    = image_tag 'indigo-logo.png'
+  #small-nav-activator
+    %i.material-icons menu
+#small-nav
+  %ul
+    %li
+      = link_to "Home", root_path, class: is_active('static_pages', 'home')
+    %li
+      = link_to "Who we are", who_we_are_path, class: is_active('static_pages', 'who')
+    %li
+      = link_to "What we do", what_we_do_path, class: is_active('static_pages', 'about')
+    %li
+      = link_to "Get in touch", get_in_touch_path, class: is_active('static_pages', 'contact')
+
+

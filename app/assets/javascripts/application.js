@@ -21,6 +21,16 @@
 $(document).on('ready page:load', function () {
   $(document).foundation();
 
+  $( "#small-nav-activator" ).click(function() {
+    $( "#small-nav" ).toggleClass('active');
+  });
+
+  $( ".content" ).click(function() {
+    if ($( "#small-nav" ).hasClass("active")) {
+     $( "#small-nav" ).removeClass("active");
+    }
+  });
+
   ContactForm.init($('#new_hiring_message'), $('#hiring_button'));
   ContactForm.init($('#new_looking_message'), $('#looking_button'));
   ContactForm.init($('#new_enquiry_message'), $('#enquiry_button'));
@@ -67,6 +77,7 @@ $(document).on('ready page:load', function () {
   }).change();
 
 });
+
 
 $(document).ready(function(){
   var stickyNavTop = $('#nav').offset().top;
