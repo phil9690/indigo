@@ -40,6 +40,10 @@ $google-color: #dd4b39
 $twitter-color: #00aced
 $youtube-color: #cd201f
 
+.highlight-first-letter
+  &:first-letter
+    color: $yellow
+
 .messageform
   display: none
 
@@ -86,7 +90,7 @@ h1, h2, h3, h4, h5, h6
 a
   color: $orange
 
-.bg-image, #home-bg-mobile, video#bgvid
+.bg-image, #home-bg-mobile, video#bgvid, .home-bg-image
   position: fixed
   top: 50%
   left: 50%
@@ -507,8 +511,6 @@ nav.sticky
   h3
     color: $dark-grey
     font-size: 1.8em
-    &:first-letter
-      color: $yellow
   p
     color: $medium-grey
     padding: 0
@@ -617,6 +619,10 @@ footer
   text-align: left
   background-color: rgba(0,0,0,0.9)
   color: $light-grey
+  .button.hollow
+    margin-top: 1em
+    border: 1px solid $orange
+    color: $orange
   .footer-info
     padding: 1em 0
   a
@@ -731,22 +737,22 @@ footer
 .small-nav-top-bar, #small-nav
   display: none
 
-.bg-image
+.home-bg-image
   display: none
 
 @media all and (orientation: portrait)
-  .bg-image
+  .bg-image, .home-bg-image
     min-width: 160%
 
 @media all and (orientation: landscape)
-  .bg-image
+  .bg-image, .home-bg-image
     min-width: 100%
 
 @media screen and (max-width: 1024px)
   video#bgvid
     display: none
   
-  .bg-image
+  .home-bg-image
     display: block
 
   .banner
@@ -870,6 +876,23 @@ footer
   .about-header
     h1
       font-size: 1.5em
+
+  .contact-section
+    .side
+      margin-top: 2em
+      text-align: center
+      i
+        display: block
+
+  footer
+    .button
+      width: 100%
+    text-align: center
+    i
+      display: block
+    .footer-info
+      a
+        margin-bottom: 0.5em
 
 @media screen and (max-width: 480px)
   #small-nav
