@@ -4,7 +4,7 @@ class LookingMessage
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_accessor :title, :first_name, :second_name, :address_line_1, :address_line_2, :city, :postcode, :contact_number, :contact_email, :occupation, :qualification_1, :qualification_2, :qualification_3, :terms_of_service
+  attr_accessor :title, :first_name, :second_name, :address_line_1, :address_line_2, :city, :postcode, :contact_number, :contact_email, :occupation, :type_of_work, :terms_of_service
 
   validates :title, :first_name, :second_name, :address_line_1, :address_line_2, :city, :postcode, :contact_number, :contact_email, :occupation, presence: true
 

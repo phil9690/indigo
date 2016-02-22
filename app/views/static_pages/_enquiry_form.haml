@@ -9,4 +9,6 @@
     .medium-12.columns
       =f.input :message, as: :text, placeholder: 'Type your message here'
     .medium-12.columns
+      = f.input :terms_of_service, as: :boolean, label: "#{t('legal.contact_acceptance')}"
+    .medium-12.columns
       = f.button :submit, "Send", id: 'enquiry_button'

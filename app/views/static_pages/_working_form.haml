@@ -6,9 +6,10 @@
       = f.input :first_name, placeholder: 'John'
     .medium-5.columns
       = f.input :second_name, placeholder: 'Smith'
-    .medium-12.columns
-      = f.input :address_line_1, placeholder: 'First Line', label: 'Address'
-      = f.input :address_line_2, placeholder: 'Second Line', label: false
+    .medium-6.columns
+      = f.input :address_line_1, placeholder: 'First Line'
+    .medium-6.columns
+      = f.input :address_line_2, placeholder: 'Second Line'
     .medium-6.columns
       = f.input :city, placeholder: 'Town/City', label: false
     .medium-6.columns
@@ -18,12 +19,10 @@
     .medium-6.columns
       = f.input :contact_email, placeholder: 'john.smith@sample.com'
     .medium-6.columns
-      = f.input :occupation, placeholder: 'Burglar'
+      = f.input :occupation, placeholder: 'Brick Layer'
     .medium-6.columns
-      = f.input :qualification_1, placeholder: 'Qualification One', label: 'Qualifications'
-      = f.input :qualification_2, placeholder: 'Qualification Two', label: false
-      = f.input :qualification_3, placeholder: 'Qualification Three', label: false
+      = f.input :type_of_work, placeholder: "Write down the type of work you're looking for", label: 'Qualifications'
     .small-12.columns
-      = f.input :terms_of_service, as: :boolean
-      = f.button :submit, "Signup", id: 'looking_button'
-      <a href="#!" class="email-us">or send an email to us</a>
+      = f.input :terms_of_service, as: :boolean, label: "#{t('legal.contact_acceptance')}"
+    .small-12.columns
+      = f.button :submit, "Send", id: 'looking_button'
