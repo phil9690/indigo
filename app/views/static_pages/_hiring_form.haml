@@ -25,6 +25,6 @@
     .medium-6.columns
       = f.input :examples_of_work, placeholder: 'Welding'
     .small-12.columns
-      = f.input :terms_of_service, as: :boolean, label: "#{t('legal.contact_acceptance')}"
+      = f.input :terms_of_service, as: :boolean, label: "Your personal details will only be used to help us provide our services to you. Please tick here to confirm that you have read and agree to our #{ link_to 'Privacy and Cookie Policy', privacy_path } and our #{ link_to 'Terms and Conditions', terms_path }, which outline how we will use your data.".html_safe
 
     = f.button :submit, "Send", id: 'hiring_button'
