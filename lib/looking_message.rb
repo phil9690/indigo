@@ -6,7 +6,7 @@ class LookingMessage
 
   attr_accessor :title, :first_name, :second_name, :address_line_1, :address_line_2, :city, :postcode, :contact_number, :contact_email, :occupation, :type_of_work, :terms_of_service
 
-  validates :title, :first_name, :second_name, :address_line_1, :address_line_2, :city, :postcode, :contact_number, :contact_email, :occupation, presence: true
+  validates :title, :first_name, :second_name, :address_line_1, :city, :postcode, :contact_number, :contact_email, :occupation, presence: true
 
   validates :contact_email, email: true
 
@@ -19,7 +19,7 @@ class LookingMessage
  def address
   address = ""
   address += "#{address_line_1}\n"
-  address += "#{address_line_2}\n"
+  address += "#{address_line_2}\n" unless address_line_2.empty?
   address += "#{city}\n"
   address += "#{postcode}\n"
  end
