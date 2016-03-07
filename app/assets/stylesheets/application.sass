@@ -129,7 +129,7 @@ a
   nav
     background: none
     padding-top: 2em
-    position: absolute
+    position: fixed
     top: 0
     z-index: 1000
     box-shadow: none
@@ -151,6 +151,9 @@ a
     a
     &:hover
       color: $nav-hover-color
+  .content
+    margin-top: 0
+
 .static_pages.home.scrolled
   nav.sticky
     background: $white
@@ -177,6 +180,8 @@ nav
   background: $white
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
   transition: 0.3s ease
+  position: fixed
+  top: 0
   li 
     display: inline-block
     text-align: center
@@ -757,6 +762,10 @@ footer
 .home-bg-image
   display: none
 
+.content
+  margin-top: 150px
+
+
 @media all and (orientation: portrait)
   .bg-image, .home-bg-image
     min-width: 160%
@@ -856,6 +865,10 @@ footer
       h1
         font-size: 2.5em
 
+  .static_pages.home
+    .content
+      margin-top: 70px
+      
   .content
     margin-top: 70px
 
