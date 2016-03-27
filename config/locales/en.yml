@@ -19,14 +19,20 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+
+
 en:
   slogan: "You're only as successful as the people around you."
-  phone_number: "0191 2267986"
+  mobile_phone_number: "+44 7760329576"
+  phone_number: "+44 191 2425420"
   rec_membership_number: "00093365"
   vat_number: "231 4405 50"
   company_number: "9827979"
   email: "info@indigo-recruitment.co.uk"
   skype: "indigo-rec"
+  facebook: "https://facebook.com/indigorec"
+  linkedin: "https://linkedin.com/company/indigo-recruitment-services-limited"
+  google_plus: "https://google.com/+Indigo-recruitmentUK"
 
   legal:
     contact_acceptance: "Your personal details will only be used to help us provide our services to you. Please tick here to confirm that you have read and agree to our Privacy and Cookie Policy and our Terms and Conditions, which outline how we will use your data."
